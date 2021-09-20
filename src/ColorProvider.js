@@ -21,7 +21,7 @@ const ColorProvider = ({ children }) => {
 
   const rateColor = (id, rating) => 
     setColors(
-      colors.map(color => color.id ? { ...color, rating } : color)
+      colors.map(color => (color.id === id ? { ...color, rating } : color))
     )
   
   const removeColor = id => setColors(colors.filter(color => color.id !== id))
