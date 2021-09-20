@@ -1,15 +1,14 @@
 import React from "react";
-import { createArray } from "./lib";
 import Star from "./Star";
 
-export default function StarRating({
+const StarRating = ({
   totalStars = 5,
   selectedStars = 0,
   onRate = f => f
-}) {
+}) => {
   return (
     <>
-      {createArray(totalStars).map((n, i) => (
+      {[...Array(totalStars)].map((n, i) => (
         <Star
           key={i}
           selected={selectedStars > i}
@@ -22,3 +21,5 @@ export default function StarRating({
     </>
   );
 }
+
+export default StarRating
